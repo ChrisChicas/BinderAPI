@@ -1,23 +1,23 @@
 {
   "development": {
     "username": "postgres",
-    "password": "alex",
-    "database": "database_development",
+    "password": "i love kai",
+    "database": "binder_api",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "test": {
     "username": "postgres",
-    "password": "alex",
-    "database": "database_test",
+    "password": "i love kai",
+    "database": "binder_api_test",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   },
   "production": {
     "username": "postgres",
-    "password": "alex",
-    "database": "database_production",
+    "password": "i love kai",
+    "database": "binder_api_production",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "postgres"
   }
 }

@@ -14,10 +14,10 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Notes.init({
-    NoteId: DataTypes.INTEGER,
-    BinderId: DataTypes.INTEGER,
-    NoteContent: DataTypes.STRING,
-    DateModified: DataTypes.INTEGER
+    note_id: DataTypes.INTEGER,
+    binder_id: DataTypes.INTEGER,
+    note_content: DataTypes.STRING,
+    date_modified: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Notes',
