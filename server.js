@@ -12,7 +12,7 @@ const user = "postgres";
 const host = "localhost";
 const database = "binder_api";
 const port = "5432";
-const pass = "i love kai";
+const pass = "password";
 
 // SEQUELIZE CONNECTION
 // const sequelize = new Sequelize(database,user,pass, {
