@@ -10,12 +10,11 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate({ UserBinders }) {
+      //User Binders
       UserTable.hasMany(UserBinders, {
         foreignKey: "BinderId",
         as: "binder_id"
       })
-
-      // define association here
     }
   }
   UserTable.init({
