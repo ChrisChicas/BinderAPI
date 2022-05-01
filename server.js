@@ -25,6 +25,11 @@ app.get('/', (req, res) => {
     })
 })
 
+// LOGIN
+app.post('/login', (req, res) => {
+    // inputUserName, inputPassword
+})
+
 // LISTEN
 app.listen(process.env.PORT, () => {
     console.log(`🎸 Rockin' on port: ${process.env.PORT}`)

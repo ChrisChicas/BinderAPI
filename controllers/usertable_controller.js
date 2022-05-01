@@ -26,6 +26,19 @@ usertable.get('/:id', async (req, res) => {
     }
 })
 
+
+// SEARCY BY NAME
+usertable.get('/:name', async (req, res) => {
+    try {
+        const founduserName = await UserTable.findOne({
+            where: { UserName: req.params.name }
+        })
+        res.status(200).json(founduserName)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
 // CREATE A USER
 usertable.post('/', async (req, res) => {
     try {
