@@ -48,7 +48,7 @@ notes.put('/:id', async (req, res) => {
             }
         })
         res.status(200).json({
-            message: `Successfully updated ${updatedBands} note(s)`
+            message: `Successfully updated ${updatedNotes} note(s)`
         })
     } catch(err) {
         res.status(500).json(err)
@@ -63,7 +63,7 @@ notes.delete('/:id', async (req, res) => {
             }
         })
         res.status(200).json({
-            message: `Successfully deleted ${deletedBands} note(s)`
+            message: `Successfully deleted ${deletedNotes} note(s)`
         })
     } catch(err) {
         res.status(500).json(err)
