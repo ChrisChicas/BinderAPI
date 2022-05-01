@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "postgres",
-    "password": "password",
-    "database": "binder_api",
-    "host": "127.0.0.1",
+    "username": "kihgrjwbwsnjzt",
+    "password": "7b8d7fd02beada5eec28d6eda789a8ab1e7189f45b796f427ef03036dc81b4f5",
+    "database": "dbpcbnmreggkrn",
+    "host": "ec2-54-172-175-251.compute-1.amazonaws.com",
     "dialect": "postgres"
   },
   "test": {
-    "username": "postgres",
-    "password": "password",
-    "database": "binder_api_test",
-    "host": "127.0.0.1",
+    "username": "kihgrjwbwsnjzt",
+    "password": "7b8d7fd02beada5eec28d6eda789a8ab1e7189f45b796f427ef03036dc81b4f5",
+    "database": "dbpcbnmreggkrn",
+    "host": "ec2-54-172-175-251.compute-1.amazonaws.com",
     "dialect": "postgres"
   },
   "production": {
-    "username": "postgres",
-    "password": "password",
-    "database": "binder_api_production",
-    "host": "127.0.0.1",
+    "username": "kihgrjwbwsnjzt",
+    "password": "7b8d7fd02beada5eec28d6eda789a8ab1e7189f45b796f427ef03036dc81b4f5",
+    "database": "dbpcbnmreggkrn",
+    "host": "ec2-54-172-175-251.compute-1.amazonaws.com",
     "dialect": "postgres"
   }
 }
