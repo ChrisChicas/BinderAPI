@@ -2,6 +2,7 @@
 const notes = require('express').Router()
 const db = require('../models')
 const { Notes } = db 
+const { Op } = require('sequelize')
 
 // FIND ALL NOTES
 notes.get('/', async (req, res) => {
@@ -31,7 +32,7 @@ notes.post('/', async (req, res) => {
         const newNote = await Notes.create(req.body)
         res.status(200).json({
             message: 'Successfully inserted a new note',
-            data: newBand
+            data: newNote
         })
     } catch(err) {
         res.status(500).json(err)

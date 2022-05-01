@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 const { Sequelize } = require('sequelize')
+const notes = require('./controllers/notes_controller')
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
@@ -20,6 +21,11 @@ app.get('/', (req, res) => {
     res.status(200).json({
         message: 'Welcome to Binder App'
     })
+})
+
+// LISTEN
+app.listen(process.env.PORT, () => {
+    console.log(`🎸 Rockin' on port: ${process.env.PORT}`)
 })
 
 
