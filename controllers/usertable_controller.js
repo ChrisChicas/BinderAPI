@@ -54,7 +54,7 @@ usertable.put('/:id', async (req, res) => {
         res.status(500).json(err)
     }
 })
-// DELETE A NOTE
+// DELETE A USER
 usertable.delete('/:id', async (req, res) => {
     try {
         const deletedUser = await UserTable.destroy({

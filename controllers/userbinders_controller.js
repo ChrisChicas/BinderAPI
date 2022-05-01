@@ -40,7 +40,7 @@ userbinders.post('/', async (req, res) => {
     }
 })
 
-// UPDATE AN EVENT
+// UPDATE A BINDER
 userbinders.put('/:id', async (req, res) => {
     try {
         const updateuserBinders = await UserBinders.update(req.body, {
@@ -56,7 +56,7 @@ userbinders.put('/:id', async (req, res) => {
     }
 })
 
-// DELETE AN EVENT
+// DELETE A BINDER
 userbinders.delete('/:id', async (req, res) => {
     try {
         const deleteduserBinder = await UserBinders.destroy({
