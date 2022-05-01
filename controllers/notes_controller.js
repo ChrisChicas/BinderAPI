@@ -7,7 +7,7 @@ const { Op } = require('sequelize')
 // FIND ALL NOTES
 notes.get('/', async (req, res) => {
     try {
-        const foundBands = await Notes.findAll()
+        const foundNotes = await Notes.findAll()
         res.status(200).json(foundNotes)
     } catch (error) {
         res.status(500).json(error)

@@ -3,6 +3,8 @@ const express = require('express')
 const app = express()
 const { Sequelize } = require('sequelize')
 const notes = require('./controllers/notes_controller')
+const userbinders = require('./controllers/userbinders_controller')
+const usertable = require('./controllers/usertable_controller')
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()

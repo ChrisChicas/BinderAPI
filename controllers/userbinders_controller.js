@@ -7,7 +7,7 @@ const { Op } = require('sequelize')
 // FIND ALL BINDERS
 userbinders.get('/', async (req, res) => {
     try {
-        const founduserBinders = await userbinders.findAll({
+        const founduserBinders = await UserBinders.findAll({
         })
         res.status(200).json(founduserBinders)
     } catch (error) {
@@ -18,7 +18,7 @@ userbinders.get('/', async (req, res) => {
 // FIND A SPECIFIC BINDER
 userbinders.get('/:id', async (req, res) => {
     try {
-        const founduserBinder = await userbinders.findOne({
+        const founduserBinder = await UserBinders.findOne({
             where: { BinderId: req.params.id }
         })
         res.status(200).json(founduserBinder)
@@ -30,7 +30,7 @@ userbinders.get('/:id', async (req, res) => {
 // CREATE A BINDER
 userbinders.post('/', async (req, res) => {
     try {
-        const newuserBinder = await userbinders.create(req.body)
+        const newuserBinder = await UserBinders.create(req.body)
         res.status(200).json({
             message: 'Successfully created a new binder',
             data: newuserBinder
@@ -43,7 +43,7 @@ userbinders.post('/', async (req, res) => {
 // UPDATE AN EVENT
 userbinders.put('/:id', async (req, res) => {
     try {
-        const updateuserBinders = await userBinders.update(req.body, {
+        const updateuserBinders = await UserBinders.update(req.body, {
             where: {
                 BinderId: req.params.id
             }
@@ -59,7 +59,7 @@ userbinders.put('/:id', async (req, res) => {
 // DELETE AN EVENT
 userbinders.delete('/:id', async (req, res) => {
     try {
-        const deleteduserBinder = await userbinders.destroy({
+        const deleteduserBinder = await UserBinders.destroy({
             where: {
                 BinderId: req.params.id
             }
