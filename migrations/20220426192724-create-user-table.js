@@ -1,4 +1,7 @@
 'use strict';
+
+const { all } = require("../controllers/notes_controller");
+
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('UserTables', {
@@ -9,16 +12,20 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       UserId: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+        allowNull: false
       },
       UserName: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       password: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       DisplayName: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
