@@ -56,8 +56,9 @@ Models for SQL Tables
 ## Tasks
 | Date | Contributor | Summary |
 | ---- | ----------- | ------- |
-| Sun. 4/24 | Darius | ReadMe file, initial commit. |
+| Sun. 4/24 | Darius | ReadMe file, Initial Commit. |
 | Sun. 5/1 | Alex, Ella | Controllers, Models, Deployment |
+| Tues. 5/3 | Alex, Ella | Seeders, Initial Commit, Migrations | 
 
 ## Project Planning
 | Date | Goals |
