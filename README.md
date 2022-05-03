@@ -65,7 +65,7 @@ Models for SQL Tables
 | Sun. 4/24 | Create GitHub repository. Add collaborators. Complete README.md, tasks sectioned out |
 | Tues. 4/26 | Ensure understanding of version control through Git, Basic Models for SQL Database, Skeleton of the website |
 | Thurs. 4/28 | Integration of the front-end |
-| Tues. 5/2 | 
+| Tues. 5/3 | Wrap everything up and check for any errors |
 
 
  
