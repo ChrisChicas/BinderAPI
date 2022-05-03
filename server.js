@@ -13,13 +13,6 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const user = "postgres";
-const host = "localhost";
-const database = "binder_api";
-const port = "5432";
-const pass = "password";
-
-
 // ROOT
 app.get('/', (req, res) => {
     res.status(200).json({
@@ -36,7 +29,6 @@ app.post('/login', (req, res) => {
 app.listen(process.env.PORT, () => {
     console.log(`🎸 Rockin' on port: ${process.env.PORT}`)
 })
-
 
 // CONTROLLERS 
 const notesController = require('./controllers/notes_controller')
