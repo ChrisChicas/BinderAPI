@@ -1,15 +1,17 @@
 // DEPENDENCIES
-const express = require('express')
-const app = express()
-const { Sequelize } = require('sequelize')
-const notes = require('./controllers/notes_controller')
-const userbinders = require('./controllers/userbinders_controller')
-const usertable = require('./controllers/usertable_controller')
+const express = require('express');
+const app = express();
+const { Sequelize } = require('sequelize');
+const notes = require('./controllers/notes_controller');
+const userbinders = require('./controllers/userbinders_controller');
+const usertable = require('./controllers/usertable_controller');
+const cors = require("cors");
 
 // CONFIGURATION / MIDDLEWARE
 require('dotenv').config()
-app.use(express.json())
-app.use(express.urlencoded({ extended: false }))
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
 const user = "postgres";
 const host = "localhost";
