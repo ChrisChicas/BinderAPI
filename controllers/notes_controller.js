@@ -18,7 +18,7 @@ notes.get('/', async (req, res) => {
 notes.get('/:id', async (req, res) => {
     try {
         const foundNotes = await Notes.findOne({
-            where: { notes_id: req.params.id }
+            where: { noteId: req.params.id }
         })
         res.status(200).json(foundNotes)
     } catch (error) {
@@ -44,7 +44,7 @@ notes.put('/:id', async (req, res) => {
     try {
         const updatedNotes = await Notes.update(req.body, {
             where: {
-                notes_id: req.params.id
+                noteId: req.params.id
             }
         })
         res.status(200).json({
@@ -59,7 +59,7 @@ notes.delete('/:id', async (req, res) => {
     try {
         const deletedNotes = await Notes.destroy({
             where: {
-                notes_id: req.params.id
+                noteId: req.params.id
             }
         })
         res.status(200).json({

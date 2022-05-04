@@ -19,7 +19,7 @@ userbinders.get('/', async (req, res) => {
 userbinders.get('/:id', async (req, res) => {
     try {
         const founduserBinder = await UserBinders.findOne({
-            where: { BinderId: req.params.id }
+            where: { binderId: req.params.id }
         })
         res.status(200).json(founduserBinder)
     } catch (error) {
@@ -45,7 +45,7 @@ userbinders.put('/:id', async (req, res) => {
     try {
         const updateuserBinders = await UserBinders.update(req.body, {
             where: {
-                BinderId: req.params.id
+                binderId: req.params.id
             }
         })
         res.status(200).json({
@@ -61,7 +61,7 @@ userbinders.delete('/:id', async (req, res) => {
     try {
         const deleteduserBinder = await UserBinders.destroy({
             where: {
-                BinderId: req.params.id
+                binderId: req.params.id
             }
         })
         res.status(200).json({

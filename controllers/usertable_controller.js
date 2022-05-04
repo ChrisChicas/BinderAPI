@@ -18,7 +18,7 @@ usertable.get('/', async (req, res) => {
 usertable.get('/:id', async (req, res) => {
     try {
         const founduserTable = await UserTables.findOne({
-            where: { UserId: req.params.id }
+            where: { userId: req.params.id }
         })
         res.status(200).json(founduserTable)
     } catch (error) {
@@ -28,10 +28,10 @@ usertable.get('/:id', async (req, res) => {
 
 
 // SEARCY BY NAME
-usertable.get('/:name', async (req, res) => {
+usertable.get('/name/:name', async (req, res) => {
     try {
         const founduserName = await UserTables.findOne({
-            where: { UserName: req.params.name }
+            where: { userName: req.params.name }
         })
         res.status(200).json(founduserName)
     } catch (error) {
