@@ -23,16 +23,30 @@ module.exports = (sequelize, DataTypes) => {
       })
     };
   }
-  
+
   UserBinders.init({
-    binderId: DataTypes.INTEGER,
-    binderTitle: DataTypes.STRING,
-    userId: DataTypes.STRING,
-    dateCreated: DataTypes.INTEGER
+    binderId: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    binderTitle: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    userId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    dateCreated: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
   }, {
     sequelize,
     modelName: 'UserBinders',
-    tableName: 'UserBinders'
+    tableName: 'UserBinders',
+    timestamps: false
   });
   return UserBinders;
 };

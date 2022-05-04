@@ -13,21 +13,37 @@ module.exports = (sequelize, DataTypes) => {
       //userbinders
       Notes.belongsTo(UserBinders, {
         foreignKey: "noteId",
-        as:"binder"
+        as: "binder"
       })
     }
   }
   Notes.init({
-    noteId: DataTypes.INTEGER,
-    binderId: DataTypes.INTEGER,
-    noteContent: DataTypes.STRING,
-    dateModified: DataTypes.INTEGER,
-    createdAt: DataTypes.DATE,
-    updatedAt: DataTypes.DATE
+    noteId: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    binderId: {
+      type: DataTypes.INTEGER,
+      allowNull: false
+    },
+    noteContent: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    createdAt: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
+    updatedAt: {
+      type: DataTypes.DATE,
+      allowNull: false
+    },
   }, {
     sequelize,
     modelName: 'Notes',
-    tableName: 'Notes'
-    });
+    tableName: 'Notes',
+    timestamps: false
+  });
   return Notes;
 };

@@ -13,11 +13,11 @@ module.exports = {
         allowNull: false
       },
       userId: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: false
       },
       dateCreated: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.DATE,
         allowNull: false
       }
     });
