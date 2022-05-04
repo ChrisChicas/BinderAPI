@@ -37,21 +37,23 @@ Models for SQL Tables
 | --- | --- | --- | --- |
 | Notes | Get | 'notes/' | Fetches list of notes |
 | Notes | Get | 'notes/:id' | Fetches specific note |
+| Notes | Get | 'notes/binder/:binderId' | Notes for specific user|
 | Notes | Post | 'notes/' | Creates a new note |
 | Notes | Put | 'notes/:id' | Modifies an existing note |
 | Notes | Delete | 'notes/:id' | Deletes an existing note |
 | --- | --- | --- | --- |
 | UserBinders | Get | 'userbinders/' | Fetches list of binders |
 | UserBinders | Get | 'userbinders/:id' | Fetches specific binder |
+| UserBinders | Get | 'userbinders/user/userId' | Fetches binders for specific user |
 | UserBinders | Post | 'userbinders/' | Creates a new binder |
 | UserBinders | Put | 'userbinders/:id' | Modifies an existing binder |
 | UserBinders | Delete | 'userbinders/:id' | Deletes an existing binder |
 | --- | --- | --- | --- |
-| UserTable | Get | 'usertable/' | Fetches list of users |
-| UserTable | Get | 'usertable/:id' | Fetches specific user |
-| UserTable | Post | 'usertable/' | Creates a new user |
-| UserTable | Put | 'usertable/:id' | Modifies an existing user |
-| UserTable | Delete | 'usertable/:id' | Deletes an existing user |
+| UserTable | Get | 'usertables/' | Fetches list of users |
+| UserTable | Get | 'usertables/:id' | Fetches specific user |
+| UserTable | Post | 'usertables/' | Creates a new user |
+| UserTable | Put | 'usertables/:id' | Modifies an existing user |
+| UserTable | Delete | 'usertables/:id' | Deletes an existing user |
 
 ## Tasks
 | Date | Contributor | Summary |
