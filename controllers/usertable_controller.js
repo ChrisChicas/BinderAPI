@@ -57,7 +57,7 @@ usertable.put('/:id', async (req, res) => {
     try {
         const updateduserTable = await UserTables.update(req.body, {
             where: {
-                UserId: req.params.id
+                userId: req.params.id
             }
         })
         res.status(200).json({
@@ -72,7 +72,7 @@ usertable.delete('/:id', async (req, res) => {
     try {
         const deletedUser = await UserTables.destroy({
             where: {
-                UserId: req.params.id
+                userId: req.params.id
             }
         })
         res.status(200).json({
