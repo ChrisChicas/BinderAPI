@@ -12,19 +12,22 @@ module.exports = (sequelize, DataTypes) => {
     static associate({ UserBinders }) {
       //userbinders
       Notes.belongsTo(UserBinders, {
-        foreignKey: "note_id",
+        foreignKey: "noteId",
         as:"binder"
       })
     }
   }
   Notes.init({
-    note_id: DataTypes.INTEGER,
-    binder_id: DataTypes.INTEGER,
-    note_content: DataTypes.STRING,
-    date_modified: DataTypes.INTEGER
+    noteId: DataTypes.INTEGER,
+    binderId: DataTypes.INTEGER,
+    noteContent: DataTypes.STRING,
+    dateModified: DataTypes.INTEGER,
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE
   }, {
     sequelize,
     modelName: 'Notes',
-  });
+    tableName: 'Notes'
+    });
   return Notes;
 };

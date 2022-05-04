@@ -1,13 +1,13 @@
 // DEPENDENCIES
 const usertable = require('express').Router()
 const db = require('../models')
-const { UserTable } = db 
+const { UserTables } = db 
 const { Op } = require('sequelize')
 
 // FIND ALL USERS
 usertable.get('/', async (req, res) => {
     try {
-        const founduserTable = await UserTable.findAll()
+        const founduserTable = await UserTables.findAll()
         res.status(200).json(founduserTable)
     } catch (error) {
         res.status(500).json(error)
@@ -17,7 +17,7 @@ usertable.get('/', async (req, res) => {
 // FIND A SPECIFIC USER
 usertable.get('/:id', async (req, res) => {
     try {
-        const founduserTable = await UserTable.findOne({
+        const founduserTable = await UserTables.findOne({
             where: { UserId: req.params.id }
         })
         res.status(200).json(founduserTable)
@@ -30,7 +30,7 @@ usertable.get('/:id', async (req, res) => {
 // SEARCY BY NAME
 usertable.get('/:name', async (req, res) => {
     try {
-        const founduserName = await UserTable.findOne({
+        const founduserName = await UserTables.findOne({
             where: { UserName: req.params.name }
         })
         res.status(200).json(founduserName)
@@ -42,7 +42,7 @@ usertable.get('/:name', async (req, res) => {
 // CREATE A USER
 usertable.post('/', async (req, res) => {
     try {
-        const newUser = await UserTable.create(req.body)
+        const newUser = await UserTables.create(req.body)
         res.status(200).json({
             message: 'Successfully created a new user',
             data: newUser
@@ -55,7 +55,7 @@ usertable.post('/', async (req, res) => {
 // UPDATE A USER
 usertable.put('/:id', async (req, res) => {
     try {
-        const updateduserTable = await UserTable.update(req.body, {
+        const updateduserTable = await UserTables.update(req.body, {
             where: {
                 UserId: req.params.id
             }
@@ -70,7 +70,7 @@ usertable.put('/:id', async (req, res) => {
 // DELETE A USER
 usertable.delete('/:id', async (req, res) => {
     try {
-        const deletedUser = await UserTable.destroy({
+        const deletedUser = await UserTables.destroy({
             where: {
                 UserId: req.params.id
             }

@@ -3,7 +3,7 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class UserTable extends Model {
+  class UserTables extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
@@ -11,19 +11,19 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate({ UserBinders }) {
       //User Binders
-      UserTable.hasMany(UserBinders, {
-        foreignKey: "BinderId",
+      UserTables.hasMany(UserBinders, {
+        foreignKey: "binderId",
         as: "binder_id"
       })
     }
   }
-  UserTable.init({
-    UserId: {
+  UserTables.init({
+    userId: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true
     },
-    UserName: {
+    userName: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -31,15 +31,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    DisplayName: {
+    displayName: {
       type: DataTypes.STRING,
       allowNull: false
     },
   }, {
     sequelize,
-    modelName: 'UserTable',
-    tableName: 'usertable',
+    modelName: 'UserTables',
+    tableName: 'UserTables',
     timestamps: false
   });
-  return UserTable;
+  return UserTables;
 };

@@ -38,4 +38,4 @@ const userbindersController = require('./controllers/userbinders_controller')
 app.use('/userbinders', userbindersController)
 
 const usertableController = require('./controllers/usertable_controller')
-app.use('/usertable', usertableController)
+app.use('/usertables', usertableController)

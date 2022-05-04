@@ -2,35 +2,23 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('UserBinders', {
-      id: {
+      binderId: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      BinderId: {
-        type: Sequelize.INTEGER,
-        allowNull: false
-      },
-      BinderTitle: {
+      binderTitle: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      UserId: {
+      userId: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      DateCreated: {
+      dateCreated: {
         type: Sequelize.INTEGER,
         allowNull: false
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE
       }
     });
   },

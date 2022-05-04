@@ -9,29 +9,30 @@ module.exports = (sequelize, DataTypes) => {
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ Notes, UserTable }) {
+    static associate({ Notes, UserTables }) {
       // Notes
       UserBinders.hasMany(Notes, {
-        foreignKey: "BinderId",
+        foreignKey: "binderId",
         as: "notes"
       });
 
       // UserTable
-      UserBinders.belongsTo(UserTable, {
-        foreignKey: "BinderId",
+      UserBinders.belongsTo(UserTables, {
+        foreignKey: "binderId",
         as: "user"
       })
     };
   }
   
   UserBinders.init({
-    BinderId: DataTypes.INTEGER,
-    BinderTitle: DataTypes.STRING,
-    UserId: DataTypes.STRING,
-    DateCreated: DataTypes.INTEGER
+    binderId: DataTypes.INTEGER,
+    binderTitle: DataTypes.STRING,
+    userId: DataTypes.STRING,
+    dateCreated: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'UserBinders',
+    tableName: 'UserBinders'
   });
   return UserBinders;
 };

@@ -5,25 +5,21 @@ const { all } = require("../controllers/notes_controller");
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Notes', {
-      id: {
+      noteId: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      NoteId: {
+      binderId: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
-      BinderId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-      },
-      NoteContent: {
+      noteContent: {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      DateModified: {
+      dateModified: {
         type: Sequelize.INTEGER,
         allowNull: false,
       },
