@@ -46,7 +46,8 @@ usertable.post('/', async (req, res) => {
         res.status(200).json({
             message: 'Successfully created a new user',
             data: newUser
-        })
+        });
+        console.log(req.body);
     } catch(err) {
         res.status(500).json(err)
     }
