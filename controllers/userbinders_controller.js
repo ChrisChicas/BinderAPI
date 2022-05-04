@@ -3,6 +3,7 @@ const userbinders = require('express').Router()
 const db = require('../models')
 const { UserBinders } = db 
 const { Op } = require('sequelize')
+const { user } = require('pg/lib/defaults')
 
 // FIND ALL BINDERS
 userbinders.get('/', async (req, res) => {
@@ -10,6 +11,18 @@ userbinders.get('/', async (req, res) => {
         const founduserBinders = await UserBinders.findAll({
         })
         res.status(200).json(founduserBinders)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
+// FIND ALL BINDERS FOR USER
+userbinders.get('/user/:userId', async (req,res) => {
+    try {
+        const foundspecificBinders = await UserBinders.findAll({
+            where: { userId: req.params.userId }
+        })
+        res.status(200).json(foundspecificBinders)
     } catch (error) {
         res.status(500).json(error)
     }

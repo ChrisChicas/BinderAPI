@@ -14,6 +14,18 @@ notes.get('/', async (req, res) => {
     }
 })
 
+// FIND ALL NOTES FOR A SPECIFIC USER
+notes.get('/binder/:binderId', async (req,res) => {
+    try {
+        const foundspecificNotes = await Notes.findAll({
+            where: { binderId: req.params.binderId }
+        })
+        res.status(200).json(foundspecificNotes)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
 // FIND A SPECIFIC NOTE
 notes.get('/:id', async (req, res) => {
     try {
