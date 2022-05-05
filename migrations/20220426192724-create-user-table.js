@@ -4,7 +4,7 @@ const { all } = require("../controllers/notes_controller");
 
 module.exports = {
   async up(queryInterface, Sequelize) { 
-    // code that will execute when running the migration
+    // code that will execute when running the migration. The up: function runs when applying the migration.
     await queryInterface.createTable('UserTables', {
       // Query interface commands can be used within the up and down methods of migration.
       userId: {
@@ -28,7 +28,7 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    //code that will execute when undoing the migration
+    //code that will execute when undoing the migration. The down: function runs when reverting the migration.
     await queryInterface.dropTable('UserTables');
   }
 };
