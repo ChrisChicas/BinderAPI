@@ -4,6 +4,7 @@ const { all } = require("../controllers/notes_controller");
 
 module.exports = {
   async up(queryInterface, Sequelize) {
+    // code that will execute when running the migration
     await queryInterface.createTable('UserTables', {
       userId: {
         allowNull: false,
@@ -26,6 +27,7 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
+    //code that will execute when undoing the migration
     await queryInterface.dropTable('UserTables');
   }
 };
