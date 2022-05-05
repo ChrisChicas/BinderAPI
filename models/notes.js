@@ -40,8 +40,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
   }, {
-    sequelize,
-    modelName: 'Notes',
+    sequelize, // Passes the connection string
+    modelName: 'Notes', // Names the model
     tableName: 'Notes',
     timestamps: false
   });
