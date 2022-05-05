@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     binderId: {
       type: DataTypes.INTEGER,
       allowNull: false
+      //allowNull: Defaults to true, determines whether or not a column value can be null.
     },
     noteContent: {
       type: DataTypes.STRING,
