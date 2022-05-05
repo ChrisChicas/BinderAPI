@@ -1,6 +1,7 @@
 'use strict';
 module.exports = {
   async up(queryInterface, Sequelize) {
+    // code that will execute when running the migration
     await queryInterface.createTable('UserBinders', {
       binderId: {
         allowNull: false,
@@ -23,6 +24,7 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
+    // code that will execute when undoing the migration
     await queryInterface.dropTable('UserBinders');
   }
 };

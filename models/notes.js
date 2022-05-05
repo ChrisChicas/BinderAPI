@@ -26,6 +26,7 @@ module.exports = (sequelize, DataTypes) => {
     binderId: {
       type: DataTypes.INTEGER,
       allowNull: false
+      //allowNull: Defaults to true, determines whether or not a column value can be null.
     },
     noteContent: {
       type: DataTypes.STRING,
@@ -40,8 +41,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
     },
   }, {
-    sequelize,
-    modelName: 'Notes',
+    sequelize, // Passes the connection string
+    modelName: 'Notes', // Names the model
     tableName: 'Notes',
     timestamps: false
   });
