@@ -5,7 +5,7 @@ const { Notes } = db // this will help us avoid having to specify db each time.
 const { Op } = require('sequelize')
 
 // FIND ALL NOTES
-notes.get('/', async (req, res) => { // the base path of this controlle is '/notes'. A GET in this file '/' is a GET to /bands'.
+notes.get('/', async (req, res) => { // the base path of this controller is '/notes'. A GET in this file '/' is a GET to /bands'.
     try {
         const foundNotes = await Notes.findAll()
         res.status(200).json(foundNotes) // call statement. for this route, we want to get back all notes, so we do not need to pass the method any arguments.
@@ -15,14 +15,14 @@ notes.get('/', async (req, res) => { // the base path of this controlle is '/not
 })
 
 // FIND ALL NOTES FOR A SPECIFIC USER
-notes.get('/binder/:binderId', async (req,res) => {
+notes.get('/binder/:binderId', async (req,res) => { // A GET file '/binder/:binderId' is a GET to /notes.
     try {
         const foundspecificNotes = await Notes.findAll({
-            where: { binderId: req.params.binderId }
+            where: { binderId: req.params.binderId } // this object specifies that we want to find a specific note 'where' its binderId is equal to the req.params.binderId.
         })
-        res.status(200).json(foundspecificNotes)
+        res.status(200).json(foundspecificNotes) // send back the foundspecificNotes as a JSON response with a status of 200.
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error) // send back a JSON response with the error and a status of 500.
     }
 })
 
@@ -30,7 +30,7 @@ notes.get('/binder/:binderId', async (req,res) => {
 notes.get('/:id', async (req, res) => { 
     try {
         const foundNotes = await Notes.findOne({ //findOne helper method on our Note model and saved it a variable called foundNotes. We want a specific notes returned so we have to pass the findOne method an object.
-            where: { noteId: req.params.id } // this object specifies that we want to find a band 'where' its noteId is equal to the req.params.id.
+            where: { noteId: req.params.id } // this object specifies that we want to find a note 'where' its noteId is equal to the req.params.id.
         })
         res.status(200).json(foundNotes) // send back the foundNotes as a JSON response with a status of 200.
     } catch (error) {
