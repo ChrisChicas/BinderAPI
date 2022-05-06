@@ -55,13 +55,14 @@ Models for SQL Tables
 | UserTable | Put | 'usertables/:id' | Modifies an existing user |
 | UserTable | Delete | 'usertables/:id' | Deletes an existing user |
 
-## ERD 
-| public             |
-| UserTables         |
-| userId integer     |
-| userName character | 
-| varying (255).     |   
+### ERD 
 
+| public                              |
+| UserTables                          |
+| userId integer                      |
+| userName character varying (255)    |
+| password character varying (255)    |
+| displayName character varying (255) |
 
 ## Tasks
 | Date | Contributor | Summary |
