@@ -71,9 +71,3 @@ Models for SQL Tables
 | Tues. 5/3 | Wrap everything up and check for any errors |
 
 
- 
-
-,
-
-.
-
