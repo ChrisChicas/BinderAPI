@@ -1,0 +1,1021 @@
+{
+	"info": {
+		"_postman_id": "52233bdd-57b7-4a1c-88b6-c64063c85a58",
+		"name": "Binder API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "LocalHost",
+			"item": [
+				{
+					"name": "UserTables",
+					"item": [
+						{
+							"name": "Get Users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/usertables/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"usertables",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/usertables/:userId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"usertables",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User by Name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/usertables/name/:userName",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"usertables",
+										"name",
+										":userName"
+									],
+									"variable": [
+										{
+											"key": "userName",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"alex\",\r\n    \"password\": \"password\",\r\n    \"displayName\": \"alexdisplay\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/usertables/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"usertables",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update an existing user",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"newPass\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/usertables/:userId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"usertables",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a user",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://localhost:3000/usertables/:userId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"usertables",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UserBinders",
+					"item": [
+						{
+							"name": "Get All Binders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/userbinders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"userbinders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Binders for a User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/userbinders/user/userId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"userbinders",
+										"user",
+										"userId"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get A Binder by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/userbinders/:binderId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"userbinders",
+										":binderId"
+									],
+									"variable": [
+										{
+											"key": "binderId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Binder",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"binderTitle\": \"testbinder 3\",\r\n    \"userId\": 1,\r\n    \"dateCreated\": \"1/1/11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/userbinders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"userbinders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a Binder",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"binderTitle\": \"hello\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/userbinders/:binderId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"userbinders",
+										":binderId"
+									],
+									"variable": [
+										{
+											"key": "binderId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a Binder",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/userbinders/:binderId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"userbinders",
+										":binderId"
+									],
+									"variable": [
+										{
+											"key": "binderId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Notes",
+					"item": [
+						{
+							"name": "Get Notes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/notes/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"notes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Notes by BinderId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/notes/binder/:binderId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"notes",
+										"binder",
+										":binderId"
+									],
+									"variable": [
+										{
+											"key": "binderId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Note by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/notes/:notesId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"notes",
+										":notesId"
+									],
+									"variable": [
+										{
+											"key": "notesId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Note",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/notes/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"notes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a Note",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/notes/:notesId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"notes",
+										":notesId"
+									],
+									"variable": [
+										{
+											"key": "notesId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a Note",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/notes/:notesId",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"notes",
+										":notesId"
+									],
+									"variable": [
+										{
+											"key": "notesId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Deployed",
+			"item": [
+				{
+					"name": "UserTables",
+					"item": [
+						{
+							"name": "Get Users",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/usertables/",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"usertables",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/usertables/:userId",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"usertables",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get User by Name",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/usertables/name/:userName",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"usertables",
+										"name",
+										":userName"
+									],
+									"variable": [
+										{
+											"key": "userName",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a User",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"userName\": \"alex\",\r\n    \"password\": \"password\",\r\n    \"displayName\": \"alexdisplay\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/usertables/",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"usertables",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update an existing user",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"password\": \"newPass\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/usertables/:userId",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"usertables",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a user",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/usertables/:userId",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"usertables",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "UserBinders",
+					"item": [
+						{
+							"name": "Get All Binders",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/userbinders",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"userbinders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Binders for a User",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/userbinders/user/:userId",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"userbinders",
+										"user",
+										":userId"
+									],
+									"variable": [
+										{
+											"key": "userId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get A Binder by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/userbinders/:binderId",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"userbinders",
+										":binderId"
+									],
+									"variable": [
+										{
+											"key": "binderId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Binder",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"binderTitle\": \"testbinder 3\",\r\n    \"userId\": 1,\r\n    \"dateCreated\": \"1/1/11\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/userbinders",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"userbinders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a Binder",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"binderTitle\": \"hello\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/userbinders/:binderId",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"userbinders",
+										":binderId"
+									],
+									"variable": [
+										{
+											"key": "binderId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a Binder",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/userbinders/:binderId",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"userbinders",
+										":binderId"
+									],
+									"variable": [
+										{
+											"key": "binderId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Notes",
+					"item": [
+						{
+							"name": "Get Notes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/notes/",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"notes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Find All Notes by BinderId",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/notes/binder/:binderId",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"notes",
+										"binder",
+										":binderId"
+									],
+									"variable": [
+										{
+											"key": "binderId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Note by ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/notes/:notesId",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"notes",
+										":notesId"
+									],
+									"variable": [
+										{
+											"key": "notesId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create a Note",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/notes/",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"notes",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update a Note",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/notes/:notesId",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"notes",
+										":notesId"
+									],
+									"variable": [
+										{
+											"key": "notesId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete a Note",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://binder-io-api.herokuapp.com/notes/:notesId",
+									"protocol": "https",
+									"host": [
+										"binder-io-api",
+										"herokuapp",
+										"com"
+									],
+									"path": [
+										"notes",
+										":notesId"
+									],
+									"variable": [
+										{
+											"key": "notesId",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
