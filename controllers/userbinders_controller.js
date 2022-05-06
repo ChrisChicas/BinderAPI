@@ -38,7 +38,7 @@ userbinders.get('/:id', async (req, res) => {
     } catch (error) {
         res.status(500).json(error)
     }
-})
+}) 
 
 // CREATE A BINDER
 userbinders.post('/', async (req, res) => {
