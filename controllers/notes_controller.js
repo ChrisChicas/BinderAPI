@@ -25,7 +25,7 @@ notes.get('/binder/:binderId', async (req,res) => { // A GET file '/binder/:bind
         res.status(500).json(error) // send back a JSON response with the error and a status of 500.
     }
 }) // this helps us find a specific note in the binder with a noteId and find all the notes from a binder at the same time.
-
+// you can also find a specific binders you could also do it through binder:id, or find them all through a user with a userId to find all binders from a specific user.
 
 // FIND A SPECIFIC NOTE
 notes.get('/:id', async (req, res) => { 
