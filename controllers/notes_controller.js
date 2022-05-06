@@ -67,18 +67,18 @@ notes.put('/:id', async (req, res) => { // update method on our Note model and s
     }
 })
 // DELETE A NOTE
-notes.delete('/:id', async (req, res) => {
+notes.delete('/:id', async (req, res) => { // destroy method on our Note model and saved it to a variable called deletedNotes. This method accepts one argument (an object specifies the entries to delete).
     try {
         const deletedNotes = await Notes.destroy({
             where: {
-                noteId: req.params.id
+                noteId: req.params.id // Deleting by ID, provided in the req.params. Use this information to specify which entry to delete.
             }
         })
-        res.status(200).json({
-            message: `Successfully deleted ${deletedNotes} note(s)`
+        res.status(200).json({ // send a JSON response with a message that says deletion was successful and include a status of 200. 
+            message: `Successfully deleted ${deletedNotes} note(s)` // similar to update, this returns the number of entries. That is why we are sending a custom message instead.
         })
     } catch(err) {
-        res.status(500).json(err)
+        res.status(500).json(err) // send back a JSON response with the error and a status of 500.
     }
 })
 
