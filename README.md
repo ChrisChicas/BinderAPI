@@ -58,12 +58,22 @@ Models for SQL Tables
 ### ERD 
 |                                     |
 | --- |
-| public                              |
-| UserTables                          |
-| userId integer                      |
-| userName character varying (255)    |
-| password character varying (255)    |
+| public |
+| UserTables |
+| userId integer |
+| userName character varying (255) |
+| password character varying (255) |
 | displayName character varying (255) |
+
+|                                     |
+| --- |
+| public |
+| UserBinders |
+| binderId integer |
+| binderTitle character varying (255) |
+| userId integer |
+| dateCreated timestamp with time zone |
+
 
 ## Tasks
 | Date | Contributor | Summary |
