@@ -1,16 +1,16 @@
 // DEPENDENCIES
 const notes = require('express').Router()
-const db = require('../models')
-const { Notes } = db 
+const db = require('../models') // with db variable, we can now access each model by using db.ModelName. For instance, db.Nots would acces the Notes model.
+const { Notes } = db // this will help us avoid having to specify db each time.
 const { Op } = require('sequelize')
 
 // FIND ALL NOTES
-notes.get('/', async (req, res) => {
+notes.get('/', async (req, res) => { // the base path of this controlle is '/notes'. A GET in this file '/' is a GET to /bands'.
     try {
         const foundNotes = await Notes.findAll()
-        res.status(200).json(foundNotes)
-    } catch (error) {
-        res.status(500).json(error)
+        res.status(200).json(foundNotes) // call statement. for this route, we want to get back all notes, so we do not need to pass the method any arguments.
+    } catch (error) { // catch statement. 
+        res.status(500).json(error) // sending back a JSON response with the error and a status of 500.
     }
 })
 
@@ -27,43 +27,43 @@ notes.get('/binder/:binderId', async (req,res) => {
 })
 
 // FIND A SPECIFIC NOTE
-notes.get('/:id', async (req, res) => {
+notes.get('/:id', async (req, res) => { 
     try {
-        const foundNotes = await Notes.findOne({
-            where: { noteId: req.params.id }
+        const foundNotes = await Notes.findOne({ //findOne helper method on our Note model and saved it a variable called foundNotes. We want a specific notes returned so we have to pass the findOne method an object.
+            where: { noteId: req.params.id } // this object specifies that we want to find a band 'where' its noteId is equal to the req.params.id.
         })
-        res.status(200).json(foundNotes)
+        res.status(200).json(foundNotes) // send back the foundNotes as a JSON response with a status of 200.
     } catch (error) {
-        res.status(500).json(error)
+        res.status(500).json(error) // send back a JSON response with the error and a status of 500.
     }
 })
 
 // CREATE A NOTE
 notes.post('/', async (req, res) => {
     try {
-        const newNote = await Notes.create(req.body)
-        res.status(200).json({
+        const newNote = await Notes.create(req.body) // create helper method on our Notes model and saved it a variable called newNote. Anyone using this route will send back a request body with that information. Therefore we can pass in the req.body as the argument.
+        res.status(200).json({ // send back a JSON response data and a status of 200.
             message: 'Successfully inserted a new note',
             data: newNote
         })
     } catch(err) {
-        res.status(500).json(err)
+        res.status(500).json(err) // send back a JSON response with the error and a status of 500.
     }
-})
+}) // the 'create' method returns the data used to create the entry. we can use newNote in our response. 
 
 // UPDATE A NOTE
-notes.put('/:id', async (req, res) => {
-    try {
+notes.put('/:id', async (req, res) => { // update method on our Note model and saved it to a variable called updatedNotes. This method requires two arguments. First one is an object to update the entry. The second is an object that specifies which entry to update.
+    try { // using this route will send a request body object containing the needed column and values. 
         const updatedNotes = await Notes.update(req.body, {
             where: {
                 noteId: req.params.id
             }
         })
-        res.status(200).json({
-            message: `Successfully updated ${updatedNotes} note(s)`
+        res.status(200).json({ // send back a JSON response with a message that says the update is successful and include a status of 200.
+            message: `Successfully updated ${updatedNotes} note(s)` // returning a custom success message because the update sequelize methong returns a number of how many entries were successfully returned.
         })
     } catch(err) {
-        res.status(500).json(err)
+        res.status(500).json(err) // send back a JSON response with the error and a status of 500.
     }
 })
 // DELETE A NOTE
@@ -86,3 +86,5 @@ notes.delete('/:id', async (req, res) => {
 
 // EXPORT
 module.exports = notes
+
+// Con
