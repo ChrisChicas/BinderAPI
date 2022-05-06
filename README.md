@@ -84,6 +84,11 @@ Models for SQL Tables
 | createdAt timestamp with time zone |
 | updatedAt timestamp with time zone |
 
+|              |
+| --- |
+| public |
+| SequelizeMeta |
+| name character varying (255) |
 
 
 ## Tasks
