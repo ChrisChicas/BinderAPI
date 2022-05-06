@@ -59,20 +59,31 @@ Models for SQL Tables
 |                                     |         
 | --- |
 | public |
-| UserTables |                                    |                        |
-| userId integer |                                | --- |
-| userName character varying (255) |              | public |
-| password character varying (255) |.             | Notes |
-| displayName character varying (255) |           | noteId integer |
-                                                  | binderId integer |
-|                                     |           | noteContent character varying (255) |
-| --- |                                           | createdAt timestamp with time zone |
-| public |                                        | updatedAt timestamp with time zone |
+| UserTables |                                    
+| userId integer |                                
+| userName character varying (255) |              
+| password character varying (255) |.             
+| displayName character varying (255) |          
+                                                  
+|                                     |           
+| --- |                                           
+| public |                                       
 | UserBinders |
 | binderId integer |
 | binderTitle character varying (255) |
 | userId integer |
 | dateCreated timestamp with time zone |
+
+|                                     |
+| --- |
+| public |
+| Notes |
+| noteId integer |
+| binderId integer |
+| noteContent character varying (255) |
+| createdAt timestamp with time zone |
+| updatedAt timestamp with time zone |
+
 
 
 ## Tasks
