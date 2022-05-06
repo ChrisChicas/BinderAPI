@@ -1,11 +1,11 @@
 // DEPENDENCIES
 const notes = require('express').Router()
-const db = require('../models') // with db variable, we can now access each model by using db.ModelName. For instance, db.Nots would acces the Notes model.
+const db = require('../models') // with db variable, we can now access each model by using db.ModelName. For instance, db.Notes would acces the Notes model.
 const { Notes } = db // this will help us avoid having to specify db each time.
 const { Op } = require('sequelize')
 
 // FIND ALL NOTES
-notes.get('/', async (req, res) => { // the base path of this controller is '/notes'. A GET in this file '/' is a GET to /bands'.
+notes.get('/', async (req, res) => { // the base path of this controller is '/notes'. A GET in this file '/' is a GET to /notes'.
     try {
         const foundNotes = await Notes.findAll()
         res.status(200).json(foundNotes) // call statement. for this route, we want to get back all notes, so we do not need to pass the method any arguments.
@@ -87,4 +87,4 @@ notes.delete('/:id', async (req, res) => { // destroy method on our Note model a
 // EXPORT
 module.exports = notes
 
-// Con
+
