@@ -17,7 +17,7 @@ Task-List, Collaborative note-taking, extra styling
 ## Important Links
 
 - Main App on Heroku: ([Link](https://binder-io.herokuapp.com))
-- API Github Repo: ([Link](https://github.com/dariusmcclendon/BinderAPI))
+- Main App Github Repo: ([Link](https://github.com/dariusmcclendon/binder.io))
 
 ## Data Models
 
