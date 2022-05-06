@@ -6,7 +6,6 @@ Milestone Project II for NJIT Coding Bootcamp, created by Darius M, Alex C, Chri
 
 Binder.io is a notetaking app that allows basic CRUD functionality.
 
-
 ### Features
 
 Binders, Incomplete-Status, CRUD
@@ -14,6 +13,11 @@ Binders, Incomplete-Status, CRUD
 ### Bonus Features
 
 Task-List, Collaborative note-taking, extra styling
+
+## Important Links
+
+- Main App on Heroku: ([Link](https://binder-io.herokuapp.com))
+- API Github Repo: ([Link](https://github.com/dariusmcclendon/BinderAPI))
 
 ## Data Models
 
