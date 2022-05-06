@@ -56,7 +56,7 @@ Models for SQL Tables
 | UserTable | Delete | 'usertables/:id' | Deletes an existing user |
 
 ### ERD 
-| public                              |
+|                                     |
 | --- |
 | public                              |
 | UserTables                          |
