@@ -1,14 +1,14 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
+import fs from 'fs';
+import path from 'path';
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
-const db = {};
+const db: any = {};
 
-let sequelize;
+let sequelize: any;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config); // this utilizes the config file that's generated to create a new sequelize instance.
 } else {

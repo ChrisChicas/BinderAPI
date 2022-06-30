@@ -1,11 +1,12 @@
 // DEPENDENCIES
+import express from "express"
 const notes = require('express').Router()
 const db = require('../models') // with db variable, we can now access each model by using db.ModelName. For instance, db.Notes would acces the Notes model.
 const { Notes } = db // this will help us avoid having to specify db each time.
 const { Op } = require('sequelize')
 
 // FIND ALL NOTES
-notes.get('/', async (req, res) => { // the base path of this controller is '/notes'. A GET in this file '/' is a GET to /notes'.
+notes.get('/', async (req: express.Request, res: express.Response) => { // the base path of this controller is '/notes'. A GET in this file '/' is a GET to /notes'.
     try {
         const foundNotes = await Notes.findAll()
         res.status(200).json(foundNotes) // call statement. for this route, we want to get back all notes, so we do not need to pass the method any arguments.
@@ -15,7 +16,7 @@ notes.get('/', async (req, res) => { // the base path of this controller is '/no
 })
 
 // FIND ALL NOTES FOR A SPECIFIC USER
-notes.get('/binder/:binderId', async (req,res) => { // A GET file '/binder/:binderId' is a GET to /notes.
+notes.get('/binder/:binderId', async (req: express.Request, res: express.Response) => { // A GET file '/binder/:binderId' is a GET to /notes.
     try {
         const foundspecificNotes = await Notes.findAll({
             where: { binderId: req.params.binderId } // this object specifies that we want to find a specific note 'where' its binderId is equal to the req.params.binderId.
@@ -28,7 +29,7 @@ notes.get('/binder/:binderId', async (req,res) => { // A GET file '/binder/:bind
 // you can also find a specific binders you could also do it through binder:id, or find them all through a user with a userId to find all binders from a specific user.
 
 // FIND A SPECIFIC NOTE
-notes.get('/:id', async (req, res) => { 
+notes.get('/:id', async (req: express.Request, res: express.Response) => { 
     try {
         const foundNotes = await Notes.findOne({ //findOne helper method on our Note model and saved it a variable called foundNotes. We want a specific notes returned so we have to pass the findOne method an object.
             where: { noteId: req.params.id } // this object specifies that we want to find a note 'where' its noteId is equal to the req.params.id.
@@ -40,7 +41,7 @@ notes.get('/:id', async (req, res) => {
 })
 
 // CREATE A NOTE
-notes.post('/', async (req, res) => {
+notes.post('/', async (req: express.Request, res: express.Response) => {
     try {
         const newNote = await Notes.create(req.body) // create helper method on our Notes model and saved it a variable called newNote. Anyone using this route will send back a request body with that information. Therefore we can pass in the req.body as the argument.
         res.status(200).json({ // send back a JSON response data and a status of 200.
@@ -53,7 +54,7 @@ notes.post('/', async (req, res) => {
 }) // the 'create' method returns the data used to create the entry. we can use newNote in our response. 
 
 // UPDATE A NOTE
-notes.put('/:id', async (req, res) => { // update method on our Note model and saved it to a variable called updatedNotes. This method requires two arguments. First one is an object to update the entry. The second is an object that specifies which entry to update.
+notes.put('/:id', async (req: express.Request, res: express.Response) => { // update method on our Note model and saved it to a variable called updatedNotes. This method requires two arguments. First one is an object to update the entry. The second is an object that specifies which entry to update.
     try { // using this route will send a request body object containing the needed column and values. 
         const updatedNotes = await Notes.update(req.body, {
             where: {
@@ -68,7 +69,7 @@ notes.put('/:id', async (req, res) => { // update method on our Note model and s
     }
 })
 // DELETE A NOTE
-notes.delete('/:id', async (req, res) => { // destroy method on our Note model and saved it to a variable called deletedNotes. This method accepts one argument (an object specifies the entries to delete).
+notes.delete('/:id', async (req: express.Request, res: express.Response) => { // destroy method on our Note model and saved it to a variable called deletedNotes. This method accepts one argument (an object specifies the entries to delete).
     try {
         const deletedNotes = await Notes.destroy({
             where: {
@@ -86,6 +87,6 @@ notes.delete('/:id', async (req, res) => { // destroy method on our Note model a
 
 
 // EXPORT
-module.exports = notes
+export default notes
 
 

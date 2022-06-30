@@ -1,15 +1,13 @@
 'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
+import { Model } from 'sequelize';
+module.exports = (sequelize: any, DataTypes: any) => {
   class UserBinders extends Model {
     /**
      * Helper method for defining associations.
      * This method is not a part of Sequelize lifecycle.
      * The `models/index` file will call this method automatically.
      */
-    static associate({ Notes, UserTables }) {
+    static associate({ Notes, UserTables }: any) {
       // Notes
       UserBinders.hasMany(Notes, {
         foreignKey: "binderId",

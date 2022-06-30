@@ -1,11 +1,12 @@
 // DEPENDENCIES
+import express from 'express';
 const usertable = require('express').Router()
 const db = require('../models')
 const { UserTables } = db 
 const { Op } = require('sequelize')
 
 // FIND ALL USERS
-usertable.get('/', async (req, res) => {
+usertable.get('/', async (req: express.Request, res: express.Response) => {
     try {
         const founduserTable = await UserTables.findAll()
         res.status(200).json(founduserTable)
@@ -15,7 +16,7 @@ usertable.get('/', async (req, res) => {
 })
 
 // FIND A SPECIFIC USER
-usertable.get('/:id', async (req, res) => {
+usertable.get('/:id', async (req: express.Request, res: express.Response) => {
     try {
         const founduserTable = await UserTables.findOne({
             where: { userId: req.params.id }
@@ -28,7 +29,7 @@ usertable.get('/:id', async (req, res) => {
 
 
 // SEARCY BY NAME
-usertable.get('/name/:name', async (req, res) => {
+usertable.get('/name/:name', async (req: express.Request, res: express.Response) => {
     try {
         const founduserName = await UserTables.findOne({
             where: { userName: req.params.name }
@@ -40,7 +41,7 @@ usertable.get('/name/:name', async (req, res) => {
 })
 
 // CREATE A USER
-usertable.post('/', async (req, res) => {
+usertable.post('/', async (req: express.Request, res: express.Response) => {
     try {
         const newUser = await UserTables.create(req.body)
         res.status(200).json({
@@ -54,7 +55,7 @@ usertable.post('/', async (req, res) => {
 })
 
 // UPDATE A USER
-usertable.put('/:id', async (req, res) => {
+usertable.put('/:id', async (req: express.Request, res: express.Response) => {
     try {
         const updateduserTable = await UserTables.update(req.body, {
             where: {
@@ -69,7 +70,7 @@ usertable.put('/:id', async (req, res) => {
     }
 })
 // DELETE A USER
-usertable.delete('/:id', async (req, res) => {
+usertable.delete('/:id', async (req: express.Request, res: express.Response) => {
     try {
         const deletedUser = await UserTables.destroy({
             where: {
@@ -85,4 +86,4 @@ usertable.delete('/:id', async (req, res) => {
 })
 
 // EXPORT
-module.exports = usertable
+export default usertable

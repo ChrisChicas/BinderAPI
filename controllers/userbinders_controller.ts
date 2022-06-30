@@ -1,4 +1,5 @@
 // DEPENDENCIES
+import express from "express"
 const userbinders = require('express').Router()
 const db = require('../models')
 const { UserBinders } = db 
@@ -6,7 +7,7 @@ const { Op } = require('sequelize')
 const { user } = require('pg/lib/defaults')
 
 // FIND ALL BINDERS
-userbinders.get('/', async (req, res) => {
+userbinders.get('/', async (req: express.Request, res: express.Response) => {
     try {
         const founduserBinders = await UserBinders.findAll({
         })
@@ -17,7 +18,7 @@ userbinders.get('/', async (req, res) => {
 })
 
 // FIND ALL BINDERS FOR USER
-userbinders.get('/user/:userId', async (req,res) => {
+userbinders.get('/user/:userId', async (req: express.Request, res: express.Response) => {
     try {
         const foundspecificBinders = await UserBinders.findAll({
             where: { userId: req.params.userId }
@@ -29,7 +30,7 @@ userbinders.get('/user/:userId', async (req,res) => {
 })
 
 // FIND A SPECIFIC BINDER
-userbinders.get('/:id', async (req, res) => {
+userbinders.get('/:id', async (req: express.Request, res: express.Response) => {
     try {
         const founduserBinder = await UserBinders.findOne({
             where: { binderId: req.params.id }
@@ -41,7 +42,7 @@ userbinders.get('/:id', async (req, res) => {
 }) 
 
 // CREATE A BINDER
-userbinders.post('/', async (req, res) => {
+userbinders.post('/', async (req: express.Request, res: express.Response) => {
     try {
         const newuserBinder = await UserBinders.create(req.body)
         res.status(200).json({
@@ -54,7 +55,7 @@ userbinders.post('/', async (req, res) => {
 })
 
 // UPDATE A BINDER
-userbinders.put('/:id', async (req, res) => {
+userbinders.put('/:id', async (req: express.Request, res: express.Response) => {
     try {
         const updateuserBinders = await UserBinders.update(req.body, {
             where: {
@@ -70,7 +71,7 @@ userbinders.put('/:id', async (req, res) => {
 })
 
 // DELETE A BINDER
-userbinders.delete('/:id', async (req, res) => {
+userbinders.delete('/:id', async (req: express.Request, res: express.Response) => {
     try {
         const deleteduserBinder = await UserBinders.destroy({
             where: {
@@ -87,4 +88,4 @@ userbinders.delete('/:id', async (req, res) => {
 
 
 // EXPORT
-module.exports = userbinders
+export default userbinders
